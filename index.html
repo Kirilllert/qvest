@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Адский квестик</title>
+	<style type="text/css">
+		.mem1{
+			display: none;
+		}
+		.mem1_new{
+			display: inline-block !important;
+		}
+		.button-contin{
+			display: none;
+		}
+		.button-contin_new{
+			display: inline-block !important;
+		}
+		.mem2{
+			display: none;
+		}
+		.mem2_new{
+			display: inline-block !important;
+		}
+		.button-finish{
+			display: none;
+		}
+		.button-finish_new{
+			display: inline-block !important;
+		}
+		.mem3{
+			display: none;
+		}
+		.mem3_new{
+			display: inline-block !important;
+		}
+	</style>
+</head>
+<body>
+<button class="button-start" id="button-start">Начать игру!</button>
+<img class="mem1" id="mem1" src="1.png">
+<img class="mem2" id="mem2" src="2.jpg">
+<button class="button-contin" id="button-contin">Продолжить</button>
+<button class="button-finish" id="button-finish">Закончить</button>
+<img class="mem3" id="mem3" src="3.png">
+
+<script type="text/javascript">
+	let buttonStart = document.getElementById('button-start');
+	let mem1 = document.getElementById('mem1');
+	let buttonContin = document.getElementById('button-contin');
+	let mem2 = document.getElementById('mem2');
+	let buttonFinish = document.getElementById('button-finish');
+	let mem3 = document.getElementById('mem3');
+
+
+	buttonStart.onclick = function() {
+		alert('Здравствуйте!Сегоня я хочу поиграть с вами в одну игру,ваша задача собрать как можно больше адских мемов!');
+
+		let answer1 = prompt('Для начало введите ваше ФИ,как в примере','Кирилл Лыженков');
+
+		if (answer1 === 'Полина Шнайдер') {
+			alert('Погнали!!!!');
+			myFun1();
+
+		} else{
+			alert('Наверное вы опечатались(((')
+		}
+	}
+
+	function myFun1() {
+		alert('Начнем с легкого.Сейчас вам буду задаваться вопросы на знания школьной программы ,а вы просто должны будите на них ответить');
+
+		let answer2 = prompt('Сумма отсрых углов прямоугольного треугольника(указать без значка градусов)');
+		let answer3 = prompt('Основатель Москвы');
+		let answer4 = prompt('Кто открыл Америку?(только фамилия)');
+
+		if (answer2 === 90,answer3 === 'Юрий Долгорукий',answer4 === 'Колумб') {
+			mem1.classList.toggle('mem1_new');
+			buttonContin.classList.toggle('button-contin_new');
+	} else{
+		alert('попробуй еще разок!')
+	} 
+}
+
+	buttonContin.onclick = function() {
+		alert('Сейчас будет чуть посложнее.Мы проверим ваш устный счет');
+
+		let answer5 = prompt('45 + 64');
+		let answer6 = prompt('11 * 11');
+		let answer7 = prompt('122 / 2');
+
+		if (answer5 === '109' , answer6 === '121' , answer7 === '61') {
+			mem2.classList.toggle('mem2_new');
+			buttonFinish.classList.toggle('button-finish_new');
+		} else{
+			alert('попробуй еще');
+		}
+}
+	buttonFinish.onclick = function() {
+		alert('Ну теперь совсм легкотня');
+		let answer8 = prompt('Какой мем связан с этим знаком {');
+		if (answer8 === 'Волнистые скобки') {
+			alert('Ну вот и все!Вы совсем справились и получили три мема)))');
+			mem3.classList.toggle('mem3_new')
+		} else{
+			alert('попробуйте еще разок')
+		}
+	}
+</script>
+</body>
+</html>
